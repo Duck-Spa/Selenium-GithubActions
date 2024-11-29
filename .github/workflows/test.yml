@@ -41,7 +41,7 @@ jobs:
     - name: Start Flask app
       run: |
         python app.py > flask.log 2>&1 &
-        sleep 10  # Dona temps perquè Flask es posi en marxa
+        sleep 15  # Dona temps perquè Flask es posi en marxa
         curl -f http://127.0.0.1:5000 || (echo "Flask no està en execució" && cat flask.log && exit 1)
 
     - name: Run Selenium tests
